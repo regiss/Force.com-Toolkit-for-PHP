@@ -1078,6 +1078,8 @@ class SObject {
 						if (sizeof($anArray) > 0) {
 							// To add more variables to the the top level sobject
 							foreach ($anArray as $key=>$children_sobject) {
+								//To prevent strict warnings
+								$this->fields = new stdClass();
 								$this->fields->$key = $children_sobject;
 							}
 							//array_push($this->fields, $anArray);
